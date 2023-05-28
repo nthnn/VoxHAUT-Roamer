@@ -1,0 +1,21 @@
+{
+  "name": "talk2jograt-sketch",
+  "version": "1.0.0",
+  "description": "The Android web page app of the Talk2JogRat.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "robocopy src/images dist/images /E && parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "nthnn",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^5.0.4"
+  }
+}
