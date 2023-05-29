@@ -4,17 +4,20 @@
   "description": "The Android web page app of the Talk2JogRat.",
   "main": "index.js",
   "scripts": {
-    "dev": "robocopy src/images dist/images /E && parcel src/index.html"
+    "dev": "robocopy src/images dist/images /E && parcel src/index.html",
+    "build": "robocopy src/images dist/images /E && parcel build --no-cache --no-source-maps --no-minify --no-autoinstall src/index.html && pause"
   },
   "keywords": [],
   "author": "nthnn",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.7.0",
     "parcel": "^2.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.16",
     "parcel-bundler": "^1.12.5",
     "typescript": "^5.0.4"
   }
