@@ -8,12 +8,21 @@ import SplashScreen from './SplashScreen';
 let root = ReactDOMClient.createRoot(document.getElementById('main'));
 root.render(<SplashScreen />);
 
-setTimeout(()=> {
-    let splashScreen: any = $("#splash-screen");
-    splashScreen.addClass("animate__fadeOut");
+class App {
+    constructor() { }
 
-    setTimeout(()=> {
-        splashScreen.addClass("d-none");
-        root.render(<LoadingScreen />);
-    }, 1200);
-}, 3000);
+    main(): void {
+        setTimeout(()=> {
+            let splashScreen: any = $("#splash-screen");
+            splashScreen.addClass("animate__fadeOut");
+        
+            setTimeout(()=> {
+                splashScreen.addClass("d-none");
+                root.render(<LoadingScreen />);
+            }, 1200);
+        }, 3000);
+    }
+}
+
+const application = new App();
+application.main();
