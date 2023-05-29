@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
+
 import $ from "jquery";
 
 import LoadingScreen from './LoadingScreen';
@@ -15,12 +16,16 @@ class App {
         setTimeout(()=> {
             let splashScreen: any = $("#splash-screen");
             splashScreen.addClass("animate__fadeOut");
-        
+
             setTimeout(()=> {
                 splashScreen.addClass("d-none");
-                root.render(<LoadingScreen />);
+                this.loadScreen();
             }, 1200);
         }, 3000);
+    }
+
+    loadScreen(): void {
+        root.render(<LoadingScreen />);
     }
 }
 
