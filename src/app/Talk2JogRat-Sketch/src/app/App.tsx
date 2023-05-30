@@ -50,7 +50,7 @@ class App {
     startChats(): void {
         $("#main-app").removeClass("d-none");
         this.chats = [["JogRat", "Hello from bot"]];
-        this.renderChats();
+        this.startRenderingChats();
 
         ReactDOMClient.createRoot(document.getElementById('floating-btn-div')).render(<FloatingCircleButton />);
         setTimeout(()=> {
@@ -59,15 +59,13 @@ class App {
     }
 
     renderChats(): void {
-        let domClient = ReactDOMClient.createRoot(document.getElementById('main-chats'));
+        ReactDOMClient.createRoot(document.getElementById('main-chats')).render(
+            <>{this.chats.map((chat)=> <BubbleChat sender={chat[0]} message={chat[1]} />)}</>
+        );
+    }
 
-        setInterval(()=> {
-            domClient.render(
-                <>
-                    {this.chats.map((chat)=> <BubbleChat sender={chat[0]} message={chat[1]} />)}
-                </>
-            )
-        }, 1000);
+    startRenderingChats(): void {
+        setInterval(()=> this.renderChats(), 1000);
     }
 }
 

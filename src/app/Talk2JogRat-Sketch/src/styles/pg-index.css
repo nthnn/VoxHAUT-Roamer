@@ -1,14 +1,6 @@
-body, html {
-    overflow-x: hidden;
-}
-
-#main {
-    height: 100vh;
-}
-
-.chatContent {
-    margin-left: 12px;
-}
+body, html { overflow-x: hidden; }
+#main { height: 100vh; }
+.chatContent { margin-left: 12px; }
 
 #floating-btn-div {
     height: 100vh;
