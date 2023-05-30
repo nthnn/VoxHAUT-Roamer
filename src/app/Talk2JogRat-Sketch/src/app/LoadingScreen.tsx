@@ -12,7 +12,7 @@ export default class LoadingScreen extends React.Component {
                         <img
                             className="rotating"
                             width="50"
-                            src="images/loading_circle.png" />
+                            src="images/loading-circle.png" />
                         <br/><br/>
                         <p>Connecting to JogRat...</p>
                     </center>

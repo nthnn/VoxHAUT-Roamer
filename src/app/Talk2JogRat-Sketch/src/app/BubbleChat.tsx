@@ -6,21 +6,18 @@ export default class LoadingScreen extends React.Component {
     }
 
     render() {
-        let classNames = "card card-body border-primary border animate__animated " +
-            (this.props.sender !== "JogRat" ? "animate__slideInRight" : "animate__slideInLeft");
-
         return (
             <div className="container">
                 <div className="row">
                     {this.props.sender !== "JogRat" && <div className="col-1"></div>}
  
                     <div className="col-11">
-                        <div className={classNames}>
+                        <div className="card card-body border-primary border animate__animated animate__flipInX">
                            <div className="container">
                                 <div className="row">
                                     <div className="col-3">
                                         <img
-                                            src={this.props.profile}
+                                            src={this.props.sender !== "JogRat" ? "images/user-placeholder.png" : "images/jograt-mascot.png"}
                                             width="60" />
                                     </div>
 
@@ -29,8 +26,10 @@ export default class LoadingScreen extends React.Component {
                                             <div className="col-1"></div>
 
                                             <div className="col-11">
-                                                <h3>{this.props.sender}</h3>
-                                                <p>{this.props.message}</p>
+                                                <div className="chatContent">
+                                                    <h3>{this.props.sender}</h3>
+                                                    <p>{this.props.message}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

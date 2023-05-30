@@ -4,22 +4,22 @@ import * as ReactDOMClient from 'react-dom/client';
 import $ from "jquery";
 
 import BubbleChat from './BubbleChat';
+import FloatingCircleButton from './FloatingCircleButton';
 import LoadingScreen from './LoadingScreen';
 import SplashScreen from './SplashScreen';
 
-let root = ReactDOMClient.createRoot(document.getElementById('main'));
-root.render(<SplashScreen />);
-
 class App {
+    private root = ReactDOMClient.createRoot(document.getElementById('main'));
     private chats: Array<string[]>;
 
     constructor() {
         this.chats = [];
+        this.root.render(<SplashScreen />);
     }
 
     main(): void {
         setTimeout(()=> {
-            let splashScreen: any = $("#splash-screen");
+            let splashScreen = $("#splash-screen");
             splashScreen.addClass("animate__fadeOut");
 
             setTimeout(()=> {
@@ -30,10 +30,10 @@ class App {
     }
 
     loadScreen(): void {
-        root.render(<LoadingScreen />);
+        this.root.render(<LoadingScreen />);
 
         let loadingScreen = $("#loading-screen");
-        $.post("", { }).fail(()=> {
+        //$.post("", { }).fail(()=> {
             setTimeout(() => {
                 loadingScreen.removeClass("animate__fadeIn").addClass("animate__fadeOut");
 
@@ -44,27 +44,30 @@ class App {
                     this.startChats();
                 }, 1200);
             }, 2000);
-        });
+        //});
     }
 
     startChats(): void {
         $("#main-app").removeClass("d-none");
-        this.chats = [["images/jograt-mascot.png", "JogRat", "Hello from bot"]];
+        this.chats = [["JogRat", "Hello from bot"]];
+        this.renderChats();
 
-        this.renderChats(ReactDOMClient.createRoot(document.getElementById('main-chats')));
+        ReactDOMClient.createRoot(document.getElementById('floating-btn-div')).render(<FloatingCircleButton />);
         setTimeout(()=> {
-            this.chats = [...this.chats, ["images/jograt-mascot.png", "Me", "Hello from me"]];
+            this.chats = [...this.chats, ["Me", "Hello from me"]];
         }, 2000);
     }
 
-    renderChats(domClient): void {
+    renderChats(): void {
+        let domClient = ReactDOMClient.createRoot(document.getElementById('main-chats'));
+
         setInterval(()=> {
             domClient.render(
                 <>
-                    {this.chats.map((chat)=> <BubbleChat profile={chat[0]} sender={chat[1]} message={chat[2]} />)}
+                    {this.chats.map((chat)=> <BubbleChat sender={chat[0]} message={chat[1]} />)}
                 </>
             )
-        }, 1500);
+        }, 1000);
     }
 }
 

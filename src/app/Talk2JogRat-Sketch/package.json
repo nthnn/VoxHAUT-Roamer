@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "The Android web page app of the Talk2JogRat.",
 	"scripts": {
-		"clean": "rmdir dist /s",
+		"clean": "rmdir dist /s && rmdir .cache /s",
 		"move-assets": "robocopy src/images dist/images",
 		"dev": "parcel src/index.html",
 		"build": "parcel build --no-cache --no-source-maps --no-minify --no-autoinstall src/index.html && pause"

@@ -1,5 +1,37 @@
-body, #main {
-    height: 100vh !important;
+body, html {
+    overflow-x: hidden;
+}
+
+#main {
+    height: 100vh;
+}
+
+.chatContent {
+    margin-left: 12px;
+}
+
+#floating-btn-div {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+}
+
+.floating-btn {
+    padding: 5px 3px 3px 3px;
+    width: 42px;
+    height: 42px;
+    background-color: var(--bs-primary);
+    box-shadow: 0 10px 25px var(--bs-secondary);
+    border-radius: 90px;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    transition: 0.3s all ease-in-out;
+}
+
+.floating-btn:active {
+    background-color: var(--bs-info);
 }
 
 .rotating {
