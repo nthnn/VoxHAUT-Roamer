@@ -58,14 +58,15 @@ class App {
         }, 2000);
     }
 
-    renderChats(): void {
-        ReactDOMClient.createRoot(document.getElementById('main-chats')).render(
+    renderChats(domClient): void {
+        domClient.render(
             <>{this.chats.map((chat)=> <BubbleChat sender={chat[0]} message={chat[1]} />)}</>
         );
     }
 
     startRenderingChats(): void {
-        setInterval(()=> this.renderChats(), 1000);
+        let domClient = ReactDOMClient.createRoot(document.getElementById('main-chats'));
+        setInterval(()=> this.renderChats(domClient), 1000);
     }
 }
 
