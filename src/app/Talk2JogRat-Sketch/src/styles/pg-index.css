@@ -10,11 +10,10 @@ body, html { overflow-x: hidden; }
 }
 
 .floating-btn {
-    padding: 5px 3px 3px 3px;
+    padding: 7px 3px 3px 3px;
     width: 42px;
     height: 42px;
     background-color: var(--bs-primary);
-    box-shadow: 0 10px 25px var(--bs-secondary);
     border-radius: 90px;
     position: absolute;
     bottom: 24px;
