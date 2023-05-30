@@ -9,7 +9,7 @@ export default class LoadingScreen extends React.Component {
                         <img
                             className="rotating"
                             width="50"
-                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnest.com%2Fsupport%2Fimages%2Fmisc-assets-icons%2Floading-blue-icon.png&f=1&nofb=1&ipt=8d2809ab895926bd8c57ab9906a3f30b66175ea3a16cc1839d965982dd5ab985&ipo=images" />
+                            src="images/loading_circle.png" />
                         <br/><br/>
                         <p>Connecting to JogRat...</p>
                     </center>
