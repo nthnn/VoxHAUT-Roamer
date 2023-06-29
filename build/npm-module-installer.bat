@@ -1,4 +1,4 @@
 @echo off
 cls
-cd ../src/app/Talk2JogRat-Sketch
+cd ../src/app/Talk2VoxHAUT-Sketch
 npm i

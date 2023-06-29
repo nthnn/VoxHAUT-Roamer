@@ -1,4 +1,4 @@
 @echo off
 cls
-cd ../src/firmware/talk-2-jograt/
+cd ../src/firmware/VoxHAUT-Sys/
 platformio run --target upload
