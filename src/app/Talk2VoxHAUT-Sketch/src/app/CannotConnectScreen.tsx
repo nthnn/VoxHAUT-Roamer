@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default class LoadingScreen extends React.Component {
+export default class CannotConnectScreen extends React.Component {
     reload(): void {
         $("#cannot-connect-section")
             .removeClass("animate__fadeIn")
