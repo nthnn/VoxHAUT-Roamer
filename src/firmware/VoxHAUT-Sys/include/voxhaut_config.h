@@ -1,0 +1,6 @@
+#ifndef VOXHAUT_CONFIG_H
+#define VOXHAUT_CONFIG_H
+
+#define VOXHAUT_SERVER_PORT 80
+
+#endif
