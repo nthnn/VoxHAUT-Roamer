@@ -4,9 +4,14 @@ import * as ReactDOMClient from 'react-dom/client';
 import $ from "jquery";
 
 import BubbleChat from './BubbleChat';
+import CannotConnectScreen from './CannotConnectScreen';
 import FloatingCircleButton from './FloatingCircleButton';
 import LoadingScreen from './LoadingScreen';
 import SplashScreen from './SplashScreen';
+
+let Config = {
+    server: "http://192.168.1.1:80"
+};
 
 class App {
     private root = ReactDOMClient.createRoot(document.getElementById('main'));
@@ -33,7 +38,10 @@ class App {
         this.root.render(<LoadingScreen />);
 
         let loadingScreen = $("#loading-screen");
-        //$.post("", { }).fail(()=> {
+        $.post(Config.server + "/check", { }, (data)=> {
+            if(data != "OK")
+                return;
+
             setTimeout(() => {
                 loadingScreen.removeClass("animate__fadeIn").addClass("animate__fadeOut");
 
@@ -44,7 +52,9 @@ class App {
                     this.startChats();
                 }, 1200);
             }, 2000);
-        //});
+        }).fail(()=> {
+            this.root.render(<CannotConnectScreen />);
+        });
     }
 
     startChats(): void {
