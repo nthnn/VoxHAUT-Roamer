@@ -16,6 +16,7 @@ let Config = {
 class App {
     private root = ReactDOMClient.createRoot(document.getElementById('main'));
     private chats: Array<string[]>;
+    private previousHash: string = null;
 
     constructor() {
         this.chats = [];
@@ -63,9 +64,6 @@ class App {
         this.startRenderingChats();
 
         ReactDOMClient.createRoot(document.getElementById('floating-btn-div')).render(<FloatingCircleButton />);
-        setTimeout(()=> {
-            this.chats = [...this.chats, ["Me", "Hello from me"]];
-        }, 2000);
     }
 
     renderChats(domClient): void {
@@ -76,9 +74,36 @@ class App {
 
     startRenderingChats(): void {
         let domClient = ReactDOMClient.createRoot(document.getElementById('main-chats'));
-        setInterval(()=> this.renderChats(domClient), 1000);
+        setInterval(()=> {
+            this.renderChats(domClient);
+
+            $.post(Config.server + "/resp", { }, (data)=> {
+                if(data["hash"] == this.previousHash)
+                    return;
+
+                setTimeout(()=> this.chats = [...this.chats, ["VoxHAUT", data["message"]]], 2200);
+            });
+        }, 1000);
+    }
+
+    sendMessageToVoxHAUT(messageId: string, message: string): void {
+        this.chats = [...this.chats, ["Me", message]];
+
+        $("#dialog-options")
+            .removeClass("animate__slideInDown")
+            .addClass("animate__slideOutUp");
+
+        setTimeout(()=> {
+            $("#dialog-options").addClass("d-none");
+            $("#message-options-dialog").remove();
+        }, 1200);
+
+        $.post(Config.server + "/message?id=" + messageId, { }, ()=> {
+        });
     }
 }
 
 const application = new App();
 application.main();
+
+export { application };

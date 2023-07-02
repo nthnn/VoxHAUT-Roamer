@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { application } from './App';
 
 export default class MessageOptionsDialog extends React.Component {
     hideOptions(): void {
@@ -21,6 +22,7 @@ export default class MessageOptionsDialog extends React.Component {
                     <hr/>
 
                     <center>
+                        <button className="btn btn-primary w-100" onClick={()=> application.sendMessageToVoxHAUT("temp", "What is the temperature right now?")}>Temperature</button>
                         <hr/>
                         <button className="btn btn-outline-danger w-100" onClick={this.hideOptions}>Close</button>
                     </center>
