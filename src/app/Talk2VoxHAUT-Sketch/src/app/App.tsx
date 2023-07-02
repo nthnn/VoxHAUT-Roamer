@@ -81,6 +81,7 @@ class App {
                 if(data["hash"] == this.previousHash)
                     return;
 
+                this.previousHash = data["hash"];
                 setTimeout(()=> this.chats = [...this.chats, ["VoxHAUT", data["message"]]], 2200);
             });
         }, 1000);
