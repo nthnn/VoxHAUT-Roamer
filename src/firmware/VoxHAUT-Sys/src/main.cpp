@@ -2,10 +2,11 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-#include "sensor_reader.h"
+#include "voxhaut_config.h"
+#include "voxhaut_sensor_reader.h"
 
 ESP8266WebServer server(VOXHAUT_SERVER_PORT);
-SensorReader sensor_reader;
+VoxHAUTSensorReader sensor_reader;
 
 void setup() {
     Serial.begin(115200);

@@ -1,10 +1,10 @@
-#ifndef SENSOR_READER_H
-#define SENSOR_READER_H
+#ifndef VOXHAUT_SENSOR_READER_H
+#define VOXHAUT_SENSOR_READER_H
 
 #include <Arduino.h>
 #include <Adafruit_AHTX0.h>
 
-class SensorReader {
+class VoxHAUTSensorReader {
     public:
     void init();
 
