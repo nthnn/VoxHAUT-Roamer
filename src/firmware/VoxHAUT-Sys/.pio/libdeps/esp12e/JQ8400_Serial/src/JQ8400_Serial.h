@@ -29,6 +29,8 @@
 #ifndef JQ8400Serial_h
 #define JQ8400Serial_h
 
+#include <Arduino.h>
+
 #define MP3_EQ_NORMAL     0
 #define MP3_EQ_POP        1
 #define MP3_EQ_ROCK       2
