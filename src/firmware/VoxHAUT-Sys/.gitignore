@@ -1,2 +1,3 @@
-.pio
+.pio/build
+.pio/libdeps/esp12e.lock
 .vscode
