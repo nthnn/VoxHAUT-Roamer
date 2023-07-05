@@ -4,6 +4,7 @@
 #include "voxhaut_emotion_renderer.h"
 #include "voxhaut_sensor_reader.h"
 #include "voxhaut_wifi_ap.h"
+#include "voxhaut_ultrasonic_sensor.h"
 #include "voxhaut_voice_player.h"
 #include "voxhaut_voice_player_defs.h"
 
@@ -12,15 +13,20 @@ VoxHAUTEmotionRenderer emotion_renderer;
 VoxHAUTSensorReader sensor_reader;
 VoxHAUTVoicePlayer voice_player;
 
+VoxHAUTUltrasonicSensor obstacle_sensor(
+    VOXHAUT_ULTRASONIC_SENSOR_TRIGGER_PIN,
+    VOXHAUT_ULTRASONIC_SENSOR_ECHO_PIN
+);
+
 void httpCheckHandler();
 void httpFetchDataHandler();
 
 void setup() {
-    ap_server.init(); 
     emotion_renderer.init();
     sensor_reader.init();
     voice_player.init();
 
+    ap_server.init(); 
     ap_server.handle("check", httpCheckHandler);
     ap_server.handle("data", httpFetchDataHandler);
     ap_server.begin();
