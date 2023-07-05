@@ -19,22 +19,15 @@ void setup()
 {  
   mySoftwareSerial.begin(9600);
   mp3.reset();
-  mp3.setVolume(20);
-  mp3.setLoopMode(MP3_LOOP_NONE);
+  mp3.setVolume(30);
+  mp3.playFileByIndexNumber(2);
+
+  delay(3100);
+  mp3.reset();
+  mp3.setVolume(30);
+  mp3.nextFolder();
+  mp3.playFileByIndexNumber(100);
 }
 
 void loop() {
-  
-  if(!mp3.busy())
-  {
-    // 1 is the FAT index number, that is the first file on the 
-    // device, 2 is the next file, 3 is the third file.
-    
-    // The FAT index has no relation to file name. Use a FAT sorting
-    // tool, like, fatsort, to sort the FAT.
-    
-    // In this example we just play the first index, over and over again.
-    mp3.playFileByIndexNumber(1);  
-  }
-  
 }
