@@ -6,9 +6,7 @@
 Adafruit_SSD1306 display(128, 32, &Wire, -1);
 
 void VoxHAUTEmotionRenderer::init() {
-    if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3c))
-        for(;;);
-
+    display.begin(SSD1306_SWITCHCAPVCC, 0x3c);
     display.setRotation(2);
     display.clearDisplay();
 }
