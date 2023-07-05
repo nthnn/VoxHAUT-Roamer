@@ -16,22 +16,14 @@ void setup() {
 
     emotion_renderer.init();
     sensor_reader.init();
-
     ap_server.init();
+
     ap_server.handle("check", httpCheckHandler);
     ap_server.begin();
-
-    emotion_renderer.render_idle();
 }
 
 void loop() {
     ap_server.loop();
-
-    Serial.println("Humidity: " + String(sensor_reader.read_humidity()));
-    Serial.println("Temperature: " + String(sensor_reader.read_temperature()));
-    Serial.println();
-
-    delay(1000);
 }
 
 void httpCheckHandler() {
