@@ -39,12 +39,11 @@ class App {
         this.root.render(<LoadingScreen />);
 
         let loadingScreen = $("#loading-screen");
-        $.post(Config.server + "/check", { }, (data)=> {
+        setTimeout(() => {
+            loadingScreen.removeClass("animate__fadeIn").addClass("animate__fadeOut");
+    $.post(Config.server + "/check", { }, (data)=> {
             if(data != "OK")
                 return;
-
-            setTimeout(() => {
-                loadingScreen.removeClass("animate__fadeIn").addClass("animate__fadeOut");
 
                 setTimeout(()=> {
                     loadingScreen.addClass("d-none");
@@ -52,11 +51,11 @@ class App {
 
                     this.startChats();
                 }, 1200);
-            }, 2000);
         }).fail(()=> {
             this.root.render(<CannotConnectScreen />);
         });
-    }
+    }, 2000);
+}
 
     startChats(): void {
         $("#main-app").removeClass("d-none");
@@ -74,21 +73,14 @@ class App {
 
     startRenderingChats(): void {
         let domClient = ReactDOMClient.createRoot(document.getElementById('main-chats'));
+
         setInterval(()=> {
             this.renderChats(domClient);
-
-            $.post(Config.server + "/resp", { }, (data)=> {
-                if(data["hash"] == this.previousHash)
-                    return;
-
-                this.previousHash = data["hash"];
-                setTimeout(()=> this.chats = [...this.chats, ["VoxHAUT", data["message"]]], 2200);
-            });
         }, 1000);
     }
 
     sendMessageToVoxHAUT(messageId: string, message: string): void {
-        this.chats = [...this.chats, ["Me", message]];
+        setTimeout(()=> this.chats = [...this.chats, ["Me", message]], 300);
 
         $("#dialog-options")
             .removeClass("animate__slideInDown")
@@ -99,7 +91,8 @@ class App {
             $("#message-options-dialog").remove();
         }, 1200);
 
-        $.post(Config.server + "/data?type=" + messageId, { }, ()=> {
+        $.post(Config.server + "/data?type=" + messageId, { }, (data)=> {
+            setTimeout(()=> this.chats = [...this.chats, ["VoxHAUT", data["response"]]], 1500);
         });
     }
 }
