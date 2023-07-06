@@ -99,7 +99,7 @@ class App {
             $("#message-options-dialog").remove();
         }, 1200);
 
-        $.post(Config.server + "/message?id=" + messageId, { }, ()=> {
+        $.post(Config.server + "/data?type=" + messageId, { }, ()=> {
         });
     }
 }
