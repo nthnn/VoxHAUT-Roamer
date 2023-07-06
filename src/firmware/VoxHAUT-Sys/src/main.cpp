@@ -45,6 +45,7 @@ void setup() {
 
 void loop() {
     ap_server.loop();
+    anomalia.check();
 }
 
 void httpCheckHandler() {
