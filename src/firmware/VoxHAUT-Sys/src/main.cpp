@@ -50,6 +50,8 @@ void loop() {
 
 void httpCheckHandler() {
     ap_server.respond(RESP(200, "text/plain", "OK"));
+
+    delay(1500);
     voice_player.greet();
 }
 
