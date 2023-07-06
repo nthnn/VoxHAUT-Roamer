@@ -33,9 +33,11 @@ void httpCheckHandler();
 void httpFetchDataHandler();
 
 void setup() {
-    emotion_renderer.init();
     sensor_reader.init();
     voice_player.init();
+
+    emotion_renderer.init();
+    emotion_renderer.render_sad();
 
     ap_server.init(); 
     ap_server.handle("check", httpCheckHandler);
@@ -51,12 +53,16 @@ void loop() {
 void httpCheckHandler() {
     ap_server.respond(RESP(200, "text/plain", "OK"));
 
-    delay(1500);
+    emotion_renderer.render_happy();
     voice_player.greet();
+
+    delay(1000);
+    emotion_renderer.render_idle();
 }
 
 void httpFetchDataHandler() {
     String type = ap_server.get_parameter("type");
+    emotion_renderer.render_happy();
 
     if(type == "temp") {
         int temp = (int) sensor_reader.read_temperature();
@@ -70,4 +76,7 @@ void httpFetchDataHandler() {
         ap_server.respond(RESP(200, "text/json", "{\"response\": \"The humidity in percentage right now is " + String(humidity) + ".\"}"));
         voice_player.speak(VOX_SYNTH_HUMIDITY, humidity);
     }
+
+    delay(1350);
+    emotion_renderer.render_idle();
 }
