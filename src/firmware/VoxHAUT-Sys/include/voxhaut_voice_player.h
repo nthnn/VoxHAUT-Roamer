@@ -11,6 +11,7 @@ class VoxHAUTVoicePlayer {
 
     void greet();
     void speak(uint16_t message, uint16_t number);
+    void play_track();
     bool is_busy();
 };
 

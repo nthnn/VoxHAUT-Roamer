@@ -30,7 +30,7 @@ Navigador navigador(
 Anomalia anomalia;
 
 void httpCheckHandler();
-void httpFetchDataHandler();
+void httpContactHandler();
 
 void setup() {
     sensor_reader.init();
@@ -41,7 +41,7 @@ void setup() {
 
     ap_server.init(); 
     ap_server.handle("check", httpCheckHandler);
-    ap_server.handle("data", httpFetchDataHandler);
+    ap_server.handle("contact", httpContactHandler);
     ap_server.begin();
 }
 
@@ -60,7 +60,7 @@ void httpCheckHandler() {
     emotion_renderer.render_idle();
 }
 
-void httpFetchDataHandler() {
+void httpContactHandler() {
     String type = ap_server.get_parameter("type");
     emotion_renderer.render_happy();
 
@@ -75,6 +75,10 @@ void httpFetchDataHandler() {
 
         ap_server.respond(RESP(200, "text/json", "{\"response\": \"The humidity in percentage right now is " + String(humidity) + ".\"}"));
         voice_player.speak(VOX_SYNTH_HUMIDITY, humidity);
+    }
+    else if(type == "sing") {
+        ap_server.respond(RESP(200, "text/json", "{ \"response\": \"Ok, I'll play a song for you.\"}"));
+        voice_player.play_track();
     }
 
     delay(1350);

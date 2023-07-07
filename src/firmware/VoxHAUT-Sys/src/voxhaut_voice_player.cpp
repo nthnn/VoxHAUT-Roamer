@@ -14,16 +14,30 @@ void VoxHAUTVoicePlayer::init() {
 }
 
 void VoxHAUTVoicePlayer::greet() {
+    if(this->is_busy())
+        jq8400.stop();
+
     jq8400.setVolume(30);
     jq8400.playFileByIndexNumber(VOX_SYNTH_HELLO);    
 }
 
 void VoxHAUTVoicePlayer::speak(uint16_t message, uint16_t number) {
+    if(this->is_busy())
+        jq8400.stop();
+
     jq8400.setVolume(30);
     jq8400.playFileByIndexNumber(message);
 
     delay(3100);
     jq8400.playFileByIndexNumber(number);
+}
+
+void VoxHAUTVoicePlayer::play_track() {
+    if(this->is_busy())
+        jq8400.stop();
+
+    jq8400.setVolume(30);
+    jq8400.playFileByIndexNumber(VOX_SYNTH_SONG);
 }
 
 bool VoxHAUTVoicePlayer::is_busy() {
