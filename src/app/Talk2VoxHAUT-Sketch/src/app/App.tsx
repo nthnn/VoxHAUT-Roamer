@@ -16,7 +16,7 @@ let Config = {
 class App {
     private root = ReactDOMClient.createRoot(document.getElementById('main'));
     private chats: Array<string[]>;
-    private previousHash: string = null;
+    private prevChats;
 
     constructor() {
         this.chats = [];
@@ -41,34 +41,38 @@ class App {
         let loadingScreen = $("#loading-screen");
         setTimeout(() => {
             loadingScreen.removeClass("animate__fadeIn").addClass("animate__fadeOut");
-    $.post(Config.server + "/check", { }, (data)=> {
-            if(data != "OK")
-                return;
+            $.post(Config.server + "/check", { }, (data)=> {
+                if(data != "OK")
+                    return;
 
-                setTimeout(()=> {
-                    loadingScreen.addClass("d-none");
-                    $("#main").remove();
+                loadingScreen.addClass("d-none");
+                $("#main").remove();
 
-                    this.startChats();
-                }, 1200);
-        }).fail(()=> {
-            this.root.render(<CannotConnectScreen />);
-        });
-    }, 2000);
-}
+                this.startChats();
+            }).fail(()=> {
+                this.root.render(<CannotConnectScreen />);
+            });
+        }, 2000);
+    }
 
     startChats(): void {
         $("#main-app").removeClass("d-none");
-        this.chats = [["VoxHAUT", "Hello from bot"]];
+        this.chats = [["VoxHAUT", "Hello!"]];
         this.startRenderingChats();
 
         ReactDOMClient.createRoot(document.getElementById('floating-btn-div')).render(<FloatingCircleButton />);
     }
 
     renderChats(domClient): void {
+        if(this.prevChats === this.chats)
+            return;
+
         domClient.render(
             <>{this.chats.map((chat)=> <BubbleChat sender={chat[0]} message={chat[1]} />)}</>
         );
+
+        window.scrollTo(0, document.body.scrollHeight);
+        this.prevChats = this.chats;
     }
 
     startRenderingChats(): void {
@@ -91,7 +95,7 @@ class App {
             $("#message-options-dialog").remove();
         }, 1200);
 
-        $.post(Config.server + "/data?type=" + messageId, { }, (data)=> {
+        $.post(Config.server + "/contact?type=" + messageId, { }, (data)=> {
             setTimeout(()=> this.chats = [...this.chats, ["VoxHAUT", data["response"]]], 1500);
         });
     }

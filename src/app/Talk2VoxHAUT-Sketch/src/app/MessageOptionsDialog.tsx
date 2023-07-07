@@ -25,6 +25,9 @@ export default class MessageOptionsDialog extends React.Component {
                         <button className="btn btn-primary w-100" onClick={()=> application.sendMessageToVoxHAUT("temp", "What is the temperature right now?")}>Temperature</button>
                         <br/><br/>
                         <button className="btn btn-primary w-100" onClick={()=> application.sendMessageToVoxHAUT("humid", "What is the humidity right now?")}>Humidity</button>
+                        <br/><br/>
+                        <button className="btn btn-primary w-100" onClick={()=> application.sendMessageToVoxHAUT("sing", "Sing me a song.")}>Sing a song</button>
+                        <br/><br/>
                         <hr/>
                         <button className="btn btn-outline-danger w-100" onClick={this.hideOptions}>Close</button>
                     </center>
