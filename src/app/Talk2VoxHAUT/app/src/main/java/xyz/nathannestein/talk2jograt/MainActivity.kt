@@ -7,7 +7,7 @@ import android.view.Window
 import android.webkit.*
 import android.widget.Toast
 
-import androidx.webkit.WebViewAssetLoader;
+import androidx.webkit.WebViewAssetLoader
 
 class MainActivity : AppCompatActivity() {
     private var shouldExit: Boolean = false
