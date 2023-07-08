@@ -26,12 +26,18 @@ VoxHAUTMotorDriver dual_motor(
     VOXHAUT_L293DD_DMB
 );
 
+bool was_prev_right = true, first = false;
+
 void httpCheckHandler();
 void httpContactHandler();
+
+void obstacle_avoidance_task();
+void webserver_handling_task();
 
 void setup() {
     sensor_reader.init();
     voice_player.init();
+    dual_motor.init();
 
     emotion_renderer.init();
     emotion_renderer.render_sad();
@@ -43,14 +49,11 @@ void setup() {
 }
 
 void loop() {
-    ap_server.loop();
+    if(first)
+        obstacle_avoidance_task();
+    else webserver_handling_task();
 
-    if(obstacle_sensor.get_distance() <= 10) {
-        if(random(0, 1) == 0)
-            dual_motor.drive_left();
-        else dual_motor.drive_right();
-    }
-    else dual_motor.drive_forward();
+    first = !first;
 }
 
 void httpCheckHandler() {
@@ -65,6 +68,8 @@ void httpCheckHandler() {
 
 void httpContactHandler() {
     String type = ap_server.get_parameter("type");
+
+    dual_motor.stop();
     emotion_renderer.render_happy();
 
     if(type == "temp") {
@@ -86,4 +91,26 @@ void httpContactHandler() {
 
     delay(1350);
     emotion_renderer.render_idle();
+    dual_motor.drive_forward();
+}
+
+void obstacle_avoidance_task() {
+    if(obstacle_sensor.get_distance() <= 16) {
+        dual_motor.stop();
+
+        if(was_prev_right)
+            dual_motor.drive_left();
+        else dual_motor.drive_right();
+        was_prev_right = !was_prev_right;
+
+        delay(500);
+        dual_motor.stop();
+        return;
+    }
+
+    dual_motor.drive_forward();
+}
+
+void webserver_handling_task() {
+    ap_server.loop();
 }
