@@ -1,6 +1,4 @@
 #include <Arduino.h>
-#include <anomalia.h>
-#include <navigador.h>
 
 #include "voxhaut_config.h"
 #include "voxhaut_emotion_renderer.h"
@@ -20,15 +18,6 @@ VoxHAUTUltrasonicSensor obstacle_sensor(
     VOXHAUT_ULTRASONIC_SENSOR_ECHO_PIN
 );
 
-Navigador navigador(
-    VOXHAUT_MOTOR_1A,
-    VOXHAUT_MOTOR_1B,
-    VOXHAUT_MOTOR_2A,
-    VOXHAUT_MOTOR_2B
-);
-
-Anomalia anomalia;
-
 void httpCheckHandler();
 void httpContactHandler();
 
@@ -47,7 +36,6 @@ void setup() {
 
 void loop() {
     ap_server.loop();
-    anomalia.check();
 }
 
 void httpCheckHandler() {
