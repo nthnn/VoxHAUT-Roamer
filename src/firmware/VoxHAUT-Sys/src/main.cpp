@@ -7,6 +7,7 @@
 #include <voxhaut_ultrasonic_sensor.h>
 #include <voxhaut_voice_player.h>
 #include <voxhaut_voice_player_defs.h>
+#include <voxhaut_motor_driver.h>
 
 VoxHAUTWiFiAP ap_server;
 VoxHAUTEmotionRenderer emotion_renderer;
@@ -16,6 +17,13 @@ VoxHAUTVoicePlayer voice_player;
 VoxHAUTUltrasonicSensor obstacle_sensor(
     VOXHAUT_ULTRASONIC_SENSOR_TRIGGER_PIN,
     VOXHAUT_ULTRASONIC_SENSOR_ECHO_PIN
+);
+
+VoxHAUTMotorDriver dual_motor(
+    VOXHAUT_L293DD_PWM_A,
+    VOXHAUT_L293DD_PWM_B,
+    VOXHAUT_L293DD_DMA,
+    VOXHAUT_L293DD_DMB
 );
 
 void httpCheckHandler();
@@ -36,6 +44,13 @@ void setup() {
 
 void loop() {
     ap_server.loop();
+
+    if(obstacle_sensor.get_distance() <= 10) {
+        if(random(0, 1) == 0)
+            dual_motor.drive_left();
+        else dual_motor.drive_right();
+    }
+    else dual_motor.drive_forward();
 }
 
 void httpCheckHandler() {
