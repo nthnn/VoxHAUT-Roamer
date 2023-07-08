@@ -1,12 +1,12 @@
 #include <Arduino.h>
 
-#include "voxhaut_config.h"
-#include "voxhaut_emotion_renderer.h"
-#include "voxhaut_sensor_reader.h"
-#include "voxhaut_wifi_ap.h"
-#include "voxhaut_ultrasonic_sensor.h"
-#include "voxhaut_voice_player.h"
-#include "voxhaut_voice_player_defs.h"
+#include <voxhaut_config.h>
+#include <voxhaut_emotion_renderer.h>
+#include <voxhaut_sensor_reader.h>
+#include <voxhaut_wifi_ap.h>
+#include <voxhaut_ultrasonic_sensor.h>
+#include <voxhaut_voice_player.h>
+#include <voxhaut_voice_player_defs.h>
 
 VoxHAUTWiFiAP ap_server;
 VoxHAUTEmotionRenderer emotion_renderer;

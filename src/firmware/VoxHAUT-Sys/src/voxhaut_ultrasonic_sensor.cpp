@@ -1,4 +1,4 @@
-#include "voxhaut_ultrasonic_sensor.h"
+#include <voxhaut_ultrasonic_sensor.h>
 
 int VoxHAUTUltrasonicSensor::get_distance() {
     digitalWrite(this->_trig_pin, LOW);

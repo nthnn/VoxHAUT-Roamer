@@ -1,7 +1,7 @@
 #include <JQ8400_Serial.h>
 #include <SoftwareSerial.h>
 
-#include "voxhaut_voice_player.h"
+#include <voxhaut_voice_player.h>
 
 SoftwareSerial serial(3, 1);
 JQ8400_Serial jq8400(serial);

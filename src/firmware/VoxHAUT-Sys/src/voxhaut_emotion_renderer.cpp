@@ -1,7 +1,7 @@
 #include <Adafruit_SSD1306.h>
 
-#include "voxhaut_bitmaps.h"
-#include "voxhaut_emotion_renderer.h"
+#include <voxhaut_bitmaps.h>
+#include <voxhaut_emotion_renderer.h>
 
 Adafruit_SSD1306 display(128, 32, &Wire, -1);
 

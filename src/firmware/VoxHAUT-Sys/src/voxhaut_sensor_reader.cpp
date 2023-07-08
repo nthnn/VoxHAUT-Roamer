@@ -1,4 +1,4 @@
-#include "voxhaut_sensor_reader.h"
+#include <voxhaut_sensor_reader.h>
 
 Adafruit_AHTX0 aht;
 

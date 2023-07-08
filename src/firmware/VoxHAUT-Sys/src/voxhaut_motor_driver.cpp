@@ -1,4 +1,4 @@
-#include "voxhaut_motor_driver.h"
+#include <voxhaut_motor_driver.h>
 
 void VoxHAUTMotorDriver::init() {
   pinMode(this->_pwm_a, OUTPUT);
