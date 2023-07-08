@@ -11,6 +11,8 @@ export default class FloatingCircleButton extends React.Component {
             .removeClass("animate__slideOutUp");
 
         root.render(<MessageOptionsDialog />);
+        window.scrollTo(0, 0);
+
         $("#dialog-options").addClass("animate__slideInDown");
     }
 

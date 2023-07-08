@@ -45,6 +45,11 @@ body, html { overflow-x: hidden; }
     animation: rotating 2s linear infinite;
 }
 
+.gap {
+    margin-top: 12px;
+    display: block;
+}
+
 @-webkit-keyframes rotating {
     from {
         -webkit-transform: rotate(0deg);

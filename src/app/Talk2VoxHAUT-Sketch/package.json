@@ -6,7 +6,7 @@
 		"clean": "rmdir dist /s || rmdir .cache /s || rmdir .parcel-cache /s",
 		"move-assets": "robocopy src/images dist/images",
 		"dev": "parcel src/index.html",
-		"build": "parcel build --no-cache --no-source-maps --no-minify --no-autoinstall src/index.html && pause"
+		"build": "parcel build --no-cache --no-source-maps --no-autoinstall src/index.html && pause"
 	},
 	"keywords": [],
 	"author": "nthnn",

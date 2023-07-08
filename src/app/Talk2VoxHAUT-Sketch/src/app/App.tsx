@@ -71,7 +71,7 @@ class App {
             <>{this.chats.map((chat)=> <BubbleChat sender={chat[0]} message={chat[1]} />)}</>
         );
 
-        window.scrollTo(0, document.body.scrollHeight);
+        setTimeout(()=> window.scrollTo(0, document.body.scrollHeight), 200);
         this.prevChats = this.chats;
     }
 
