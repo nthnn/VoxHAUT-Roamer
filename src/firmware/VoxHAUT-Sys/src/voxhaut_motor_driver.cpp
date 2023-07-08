@@ -34,7 +34,4 @@ void VoxHAUTMotorDriver::drive_forward() {
 void VoxHAUTMotorDriver::stop() {
     digitalWrite(this->_pwm_a, 0);
     digitalWrite(this->_pwm_b, 0);
-
-    digitalWrite(this->_dma, LOW);
-    digitalWrite(this->_dmb, LOW);
 }
