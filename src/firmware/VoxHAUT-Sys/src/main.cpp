@@ -90,8 +90,8 @@ void httpContactHandler() {
     }
 
     delay(1350);
-    emotion_renderer.render_idle();
     dual_motor.drive_forward();
+    emotion_renderer.render_idle();
 }
 
 void obstacle_avoidance_task() {
