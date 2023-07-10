@@ -2,6 +2,12 @@
 
 VoxHAUT combines various technologies such as the _ESP8266 NodeMCU 1.0 microcontroller unit_, the _ESP8266 L293DD Motor Shield_, _AHT20 and BMP280 sensor_, _JQ8400 audio synthesis module_, _OLED 0.96 inch display_, and _HR-SC04 ultrasonic sensor_. Designed to function as a pet companion, VoxHAUT integrates seamlessly with Android and desktop applications through a Wi-Fi connection, enabling users to interact and communicate with it effectively.
 
+<p align="center">
+    <img src="assets/voxhaut/voxhaut_isometric.jpg" width="350" />
+    <br/>
+    <i>VoxHAUT on isometric perspective</i>
+</p>
+
 The core of the VoxHAUT is the ESP8266 NodeMCU 1.0, a powerful microcontroller that serves as the central control unit. With built-in Wi-Fi capabilities, the NodeMCU facilitates wireless communication between VoxHAUT and the user devices, creating a seamless interface for interaction. This connectivity allows users to control VoxHAUT, receive real-time data, and trigger emotional responses, enhancing the overall interactive experience.
 
 While, the hardware components of the VoxHAUT includes various sensors and modules that contribute to its functionality. The on-board AHT20 and BMP280 sensors enable environmental monitoring by providing accurate measurements of temperature, humidity, and atmospheric pressure. These sensors offer users valuable insights into its surroundings.
@@ -15,6 +21,12 @@ To ensure safe navigation, the VoxHAUT incorporates ultrasonic sensor that mimic
 By combining these hardware components and technologies, the VoxHAUT with ESP8266 NodeMCU 1.0 provides users with an interactive pet-like companion. Users can control the VoxHAUT, receive real-time data, trigger emotional responses, and engage in meaningful interactions through the provided Android and desktop applications. And with its unique blend of functionality and interactivity, the VoxHAUT with ESP8266 NodeMCU 1.0 offers an exciting and immersive user experience, making it an ideal choice for those seeking a technologically advanced pet-like companion.
 
 This repository contains the complete source code, hardware setup instructions, and additional documentation for the VoxHAUT project.
+
+## Pictures of VoxHAUT
+
+| Front View                   | Side View                   | Top View                   |
+|------------------------------|-----------------------------|----------------------------|
+| ![VoxHAUT Front View](assets/voxhaut/voxhaut_front.jpg) | ![VoxHAUT Side View](assets/voxhaut/voxhaut_side.jpg) | ![VoxHAUT Top View](assets/voxhaut/voxhaut_top.jpg) |
 
 ## Features
 
@@ -49,37 +61,37 @@ VoxHAUT is built with an ESP8266 NodeMCU 1.0, a versatile microcontroller unit b
 1. __ESP8266 NodeMCU 1.0__: This central control unit is based on the ESP8266 microcontroller, providing robust processing power and Wi-Fi connectivity. It serves as the brain of VoxHAUT, coordinating its operations and enabling wireless communication with user devices.
 
 <p align="center">
-    <img src="assets/esp8266-nodemcu-board.jpg" width="280" />
+    <img src="assets/components/esp8266-nodemcu-board.jpg" width="280" />
 </p>
 
 2. __ESP8266 L293DD Motor Shield__: The motor shield offers precise control over VoxHAUT's movements. It interfaces with the ESP8266 NodeMCU, providing the ability to drive motors with accuracy, allowing smooth navigation and control.
 
 <p align="center">
-    <img src="assets/esp8266-l293dd-shield.jpg" width="280" />
+    <img src="assets/components/esp8266-l293dd-shield.jpg" width="280" />
 </p>
 
 3. __AHT20 + BMP280 Sensor__: An on-board temperature and humidity sensor for environmental monitoring and a sensor module used to measure atmospheric pressure and temperature. It provides accurate measurements of temperature and humidity, enabling real-time environmental data tracking. And by incorporating these sensors into the VoxHAUT, users can monitor and analyze atmospheric conditions in real-time.
 
 <p align="center">
-    <img src="assets/aht20-bmp280-sensor.jpg" width="280" />
+    <img src="assets/components/aht20-bmp280-sensor.jpg" width="280" />
 </p>
 
 4. __JQ8400 Audio Synthesis Module__: This audio synthesis module enhances VoxHAUT's interaction capabilities by enabling voice synthesis and audio playback. It allows VoxHAUT to communicate with users audibly, providing a more immersive experience.
 
 <p align="center">
-    <img src="assets/jq8400-module.jpg" width="280" />
+    <img src="assets/components/jq8400-module.jpg" width="280" />
 </p>
 
 5. __OLED 0.96 Inch Display__: The OLED display serves as the visual interface of the VoxHAUT, measuring 0.96 inches. It is used to convey emotions. With its clear and vibrant display, users can easily interpret VoxHAUT's current state and interact accordingly.
 
 <p align="center">
-    <img src="assets/oled-0.96-display.jpg" width="280" />
+    <img src="assets/components/oled-0.96-display.jpg" width="280" />
 </p>
 
 6. __HC-SR04 Ultrasonic Sensor__: The VoxHAUT incorporates ultrasonic sensors to mimic eyes and enable obstacle avoidance functionality. By emitting ultrasonic waves and measuring the echo time, the sensors determine the presence and distance of obstacles in its path. This allows VoxHAUT to navigate intelligently, avoiding collisions and ensuring a safe and smooth user experience.
 
 <p align="center">
-    <img src="assets/hc-sr04-sensor.jpg" width="280" />
+    <img src="assets/components/hc-sr04-sensor.jpg" width="280" />
 </p>
 
 The seamless integration of these hardware components empowers VoxHAUT with ESP8266 NodeMCU 1.0 to provide a comprehensive and engaging user interaction, environmental monitoring, and obstacle avoidance capabilities.
