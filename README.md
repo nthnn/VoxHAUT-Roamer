@@ -1,6 +1,6 @@
 # VoxHAUT Pet Robot on ESP8266
 
-VoxHAUT combines various technologies such as the _ESP8266 NodeMCU 1.0 microcontroller unit_, the _ESP8266 L293DD Motor Shield_, _AHT20 and BMP280 sensor_, _JQ8400 audio synthesis module_, _OLED 0.96 inch display_, and _HR-SC04 ultrasonic sensor_. Designed to function as a pet companion, VoxHAUT integrates seamlessly with Android and desktop applications through a Wi-Fi connection, enabling users to interact and communicate with it effectively.
+VoxHAUT combines various technologies such as the _ESP8266 NodeMCU 1.0 microcontroller unit_, the _ESP8266 L293DD Motor Shield_, _AHT20 and BMP280 sensor_, _JQ8400 audio synthesis module_, _OLED 0.96 inch display_, and _HR-SC04 ultrasonic sensor_. Designed to function as a pet companion, VoxHAUT integrates seamlessly with Android through a Wi-Fi connection, enabling users to interact and communicate with it effectively.
 
 <p align="center">
     <img src="assets/voxhaut/voxhaut_isometric.jpg" width="350" />
@@ -18,7 +18,7 @@ Moreover, the OLED 0.96" Display serves as the visual interface of VoxHAUT, conv
 
 To ensure safe navigation, the VoxHAUT incorporates ultrasonic sensor that mimic eyes. These sensors enable obstacle avoidance functionality, allowing the VoxHAUT to detect and navigate around obstacles intelligently. This feature enhances the VoxHAUT's autonomy and ensures a smooth and reliable user experience.
 
-By combining these hardware components and technologies, the VoxHAUT with ESP8266 NodeMCU 1.0 provides users with an interactive pet-like companion. Users can control the VoxHAUT, receive real-time data, trigger emotional responses, and engage in meaningful interactions through the provided Android and desktop applications. And with its unique blend of functionality and interactivity, the VoxHAUT with ESP8266 NodeMCU 1.0 offers an exciting and immersive user experience, making it an ideal choice for those seeking a technologically advanced pet-like companion.
+By combining these hardware components and technologies, the VoxHAUT with ESP8266 NodeMCU 1.0 provides users with an interactive pet-like companion. Users can control the VoxHAUT, receive real-time data, trigger emotional responses, and engage in meaningful interactions through the provided Android application. And with its unique blend of functionality and interactivity, the VoxHAUT with ESP8266 NodeMCU 1.0 offers an exciting and immersive user experience, making it an ideal choice for those seeking a technologically advanced pet-like companion.
 
 This repository contains the complete source code, hardware setup instructions, and additional documentation for the VoxHAUT project.
 
@@ -30,9 +30,9 @@ This repository contains the complete source code, hardware setup instructions, 
 
 ## Features
 
-- **WiFi Connectivity**: The VoxHAUT utilizes the ESP8266 NodeMCU 1.0 microcontroller unit to establish a wireless connection with Android and desktop applications via WiFi. This allows seamless interaction between the user and the robot, enabling a wide range of functionalities and commands.
+- **WiFi Connectivity**: The VoxHAUT utilizes the ESP8266 NodeMCU 1.0 microcontroller unit to establish a wireless connection with Android application via WiFi. This allows seamless interaction between the user and the robot, enabling a wide range of functionalities and commands.
 
-- **Android and Desktop App Interaction**: Users can control and interact with the VoxHAUT using either an Android or desktop application. The Android app is developed using TypeScript and ReactJS and wrapped within an Android WebView written in Kotlin. The desktop app is built using ElectronJS, providing a consistent user experience across platforms.
+- **Android App Interaction**: Users can control and interact with the VoxHAUT with an Android application. The Android app is developed using TypeScript and ReactJS and wrapped within an Android WebView written in Kotlin.
 
 - **Emotional Display**: The VoxHAUT features an OLED 0.96 inch display that visually expresses emotions such as happiness, sadness, and idleness. When users interact with VoxHAUT, it displays a happy emotion, creating a friendly and engaging atmosphere. In the absence of user interaction, the display shows a sad emotion, indicating VoxHAUT's longing for attention.
 
@@ -44,11 +44,11 @@ This repository contains the complete source code, hardware setup instructions, 
 
 ## Functionality
 
-The primary objective of VoxHAUT is to provide users with a virtual pet experience through interaction with its Android and desktop applications.
+The primary objective of VoxHAUT is to provide users with a virtual pet experience through interaction with its Android application.
 
-- **Pet-like Interaction**: The primary purpose of VoxHAUT is to serve as a pet-like companion. Users can interact with the robot using the Android or desktop application, issuing commands, playing sounds, and engaging in conversations. The robot responds with synthesized speech, expressive emotions on the OLED display, and appropriate movements.
+- **Pet-like Interaction**: The primary purpose of VoxHAUT is to serve as a pet-like companion. Users can interact with the robot using the Android application, issuing commands, playing sounds, and engaging in conversations. The robot responds with synthesized speech, expressive emotions on the OLED display, and appropriate movements.
 
-- **Environment Monitoring**: The AHT20 and BMP280 sensors provide real-time environmental data to the Android and desktop applications. Users can access information such as temperature, humidity, atmospheric pressure, and altitude, enabling them to monitor its surroundings remotely.
+- **Environment Monitoring**: The AHT20 and BMP280 sensors provide real-time environmental data to the Android application. Users can access information such as temperature, humidity, atmospheric pressure, and altitude, enabling them to monitor its surroundings remotely.
 
 - **Speech Synthesis**: The JQ8400 audio synthesis module enables the VoxHAUT to speak in response to user interactions. Using pre-recorded audio samples, the module generates speech, providing a personalized and engaging experience for users.
 
