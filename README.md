@@ -54,6 +54,26 @@ The primary objective of VoxHAUT is to provide users with a virtual pet experien
 
 - **Emotional Feedback**: The OLED 0.96 inch display serves as a visual feedback mechanism, reflecting the emotional state of the VoxHAUT. The display showcases happiness when the robot receives user interaction, reinforcing the feeling of companionship. When left idle for an extended period, the display exhibits a sad emotion, encouraging users to engage with the robot.
 
+## Getting Started
+
+To get started, follow the steps below to build the robot:
+
+1. Wire up the components and follow the [schematics](#Schematics), see next section.
+2. Run the `upload-firmware.bat` file from the [build/](build/) folder. It should smoothly upload the codes to the ESP8266 NodeMCU. Make sure you have PlatformIO installed.
+
+To build the Android app, follow the steps below:
+
+1. First, run the `npm-module-installer.bat` then the `build-sketch.bat`, and finally `asset-mover.bat`. All of which are located on the [build/](build/) folder.
+2. Now, from the Android Studio, open the folder [src/app/Talk2VoxHAUT]. You can now build the project.
+
+Happy building!
+
+## Schematics
+
+The schematics are freely available on the folder [schematics/](schematics/) available on both PDF and PNG format.
+
+![VoxHAUT Schematic Diagram](schematics/voxhaut_schematic_diagram.png)
+
 ## Hardware Components
 
 VoxHAUT is built with an ESP8266 NodeMCU 1.0, a versatile microcontroller unit board, and the ESP8266 L293DD Motor Shield, which enables precise control of its motors. It features an on-board AHT20 and BMP280 sensor for temperature and barometric pressure measurements. Additionally, it incorporates the JQ8400 audio synthesis module to produce speech, an OLED 0.96-inch display to convey emotions, and ultrasonic sensors for obstacle avoidance.
