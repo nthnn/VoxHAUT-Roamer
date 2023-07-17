@@ -32,7 +32,7 @@ This repository contains the complete source code, hardware setup instructions, 
 
 | Splash Screen                | Selectable Chats            | Conversation Page          |
 |------------------------------|-----------------------------|----------------------------|
-| ![Splash Screen](assets/screenshots/screenshot_1.png =100%) | ![Selectable Chats](assets/screenshots/screenshot_2.png =100%) | ![Conversation Page](assets/screenshots/screenshot_3.png =100%) |
+| ![Splash Screen](assets/screenshots/screenshot_1.png =250x) | ![Selectable Chats](assets/screenshots/screenshot_2.png =250x) | ![Conversation Page](assets/screenshots/screenshot_3.png =250x) |
 
 ## Features
 
