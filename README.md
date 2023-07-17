@@ -28,6 +28,12 @@ This repository contains the complete source code, hardware setup instructions, 
 |------------------------------|-----------------------------|----------------------------|
 | ![VoxHAUT Front View](assets/voxhaut/voxhaut_front.jpg) | ![VoxHAUT Side View](assets/voxhaut/voxhaut_side.jpg) | ![VoxHAUT Top View](assets/voxhaut/voxhaut_top.jpg) |
 
+## Android App Screenshots
+
+| Splash Screen                | Selectable Chats            | Conversation Page          |
+|------------------------------|-----------------------------|----------------------------|
+| ![Splash Screen](assets/screenshots/screenshot_1.png) | ![Selectable Chats](assets/screenshots/screenshot_2.png) | ![Conversation Page](assets/screenshots/screenshot_3.png) |
+
 ## Features
 
 - **WiFi Connectivity**: The VoxHAUT utilizes the ESP8266 NodeMCU 1.0 microcontroller unit to establish a wireless connection with Android application via WiFi. This allows seamless interaction between the user and the robot, enabling a wide range of functionalities and commands.
