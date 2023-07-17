@@ -95,7 +95,7 @@ void httpContactHandler() {
 }
 
 void obstacle_avoidance_task() {
-    if(obstacle_sensor.get_distance() <= 16) {
+    if(obstacle_sensor.get_distance() <= 25) {
         dual_motor.stop();
 
         if(was_prev_right)
